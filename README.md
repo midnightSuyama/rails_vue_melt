@@ -1,5 +1,8 @@
 # RailsVueMelt
 
+[![Gem Version](https://badge.fury.io/rb/rails_vue_melt.svg)](http://badge.fury.io/rb/rails_vue_melt)
+[![CircleCI](https://circleci.com/gh/midnightSuyama/rails_vue_melt.svg?style=shield)](https://circleci.com/gh/midnightSuyama/rails_vue_melt)
+
 Rails view with webpack=vue optimizer
 
 ## Installation
