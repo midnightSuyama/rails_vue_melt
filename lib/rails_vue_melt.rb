@@ -1,0 +1,2 @@
+module RailsVueMelt
+end
