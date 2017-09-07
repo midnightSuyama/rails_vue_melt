@@ -12,7 +12,12 @@ class VueMeltGenerator < Rails::Generators::Base
     <meta name="turbolinks-cache-control" content="no-cache">
 EOS
     end
-    gsub_file 'config/webpack/loaders/vue.js', 'extractCSS: true,', 'extractCSS: false,'
+
+    inject_into_file 'config/webpack/environment.js', before: /^module\.exports = environment$/ do
+<<-EOS
+environment.loaders.get('vue').options.extractCSS = false
+EOS
+    end
   end
 
   def yarn

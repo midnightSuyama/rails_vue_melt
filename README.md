@@ -50,10 +50,10 @@ Or install it yourself as:
     <meta name="turbolinks-cache-control" content="no-cache">
 ```
 
-#### gsub `config/webpack/loaders/vue.js`
+#### insert `config/webpack/environment.js`
 
 ```javascript
-    extractCSS: false,
+environment.loaders.get('vue').options.extractCSS = false
 ```
 
 #### install packages

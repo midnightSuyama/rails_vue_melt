@@ -8,8 +8,8 @@ describe VueMeltGenerator, type: :generator do
     prepare_destination
     mkdir_p "#{destination_root}/app/views/layouts"
     cp File.expand_path('fixtures/application.html.erb', File.dirname(__FILE__)), "#{destination_root}/app/views/layouts"
-    mkdir_p "#{destination_root}/config/webpack/loaders"
-    cp File.expand_path('fixtures/vue.js', File.dirname(__FILE__)), "#{destination_root}/config/webpack/loaders"
+    mkdir_p "#{destination_root}/config/webpack"
+    cp File.expand_path('fixtures/environment.js', File.dirname(__FILE__)), "#{destination_root}/config/webpack"
     run_generator
   end
 
@@ -31,8 +31,8 @@ describe VueMeltGenerator, type: :generator do
   end
 
   it 'changes extractCSS' do
-    content = File.read("#{destination_root}/config/webpack/loaders/vue.js")
-    expect(content).to match(/extractCSS: false/)
+    content = File.read("#{destination_root}/config/webpack/environment.js")
+    expect(content).to match(/environment\.loaders\.get\('vue'\)\.options\.extractCSS = false\nmodule\.exports = environment$/)
   end
 
   it 'installs package' do
